@@ -1,0 +1,143 @@
+{% load settings_value %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="DC.title" content="{{ site.name }}" />
+	<title>{% block title %}{% block sub-title %}{% endblock %}{{ site.name }}{% endblock %}</title>
+
+	<!--[if IE]>
+		<script src="{{ STATIC_URL }}html5.js"></script>
+	<![endif]-->
+	<script src="{{ STATIC_URL }}jquery-2.1.0.min.js"></script>
+	<script src="{{ STATIC_URL }}jquery-ui-1.10.4.custom.min.js"></script>
+	<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+	<link hef="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/members.css" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}jquery-custom.css">
+
+	{% if not request.user.is_staff %}
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', '{% settings_value "GOOGLE_ANALYTICS_ID" %}', 'auto');
+			ga('send', 'pageview');
+		</script>
+	{% endif %}
+
+	{%block sub-head %}{% endblock %}
+
+	<style>
+	{% block style %}{% endblock %}
+	</style>
+</head>
+
+	<body>{% block body %}
+		<!-- <div id="page_container"> -->
+			<!-- Page -->
+			<div id="header_container">
+				<div id="header">
+					<nav class='row' id='main-nav'>
+						<div class='nav-wrapper'>
+							<div id='logo'>
+								<a href="{% url 'members.views.home' %}" id="home">
+									<img class='sec-logo' />
+								</a>
+							</div>
+				      <ul id="nav-mobile" class="right">
+				        <li><a href="{% url 'members.views.profile_redirect' %}">Profile</a></li>
+								{% if not request.user.is_authenticated %}
+					        <li><a>Members</a></li>
+					        <li><a>Events</a></li>
+									<li><a>Tags</a></li>
+					        <li><a>Mailing Lists</a></li>
+									<li><a>Slack</a></li>
+									<li><a>Login</a></li>
+								{% elif request.user.get_profile.is_active %}
+									<li><a href="{% url 'members.views.view_members' %}">Members</a></li>
+									<li><a href="{% url 'members.views.events_google' %}">Events</a></li>
+									<li><a href="{% url 'members.views.tag_cloud' %}">Tags</a></li>
+									<li><a href="{% url 'members.views.mail' %}">Mailing Lists</a></li>
+									<li><a href="{% url 'members.views.slack' user.username %}">Slack</a></li>
+									<li><a href="{% url 'django.contrib.auth.views.logout_then_login' %}">Logout</a></li>
+								{% else %}
+									<li><a href="{% url 'members.views.not_active' %}">Members</a></li>
+									<li><a href="{% url 'members.views.not_active' %}">Events</a></li>
+									<li><a href="{% url 'members.views.not_active' %}">Tags</a></li>
+									<li><a href="{% url 'members.views.not_active' %}">Mailing Lists</a></li>
+									<li><a href="{% url 'members.views.not_active' %}">Slack</a></li>
+									<li><a href="{% url 'django.contrib.auth.views.logout_then_login' %}">Logout</a></li>
+								{% endif %}
+				      </ul>
+				    </div>
+				  </nav>
+				</div>
+			</div>
+
+			<div>
+				<div class='row'>
+					<div class="lightbg col s10 offset-s1">
+						<div id="content">{% block content %}{% endblock %}</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- Footer -->
+			<footer class="page-footer">
+				<div class="footer-copyright">
+          <div class="container">
+          	© 2016 |  Office Nomads | <a id='nadine-link' href="http://nadineproject.org/" target="_new">The Nadine Project</a>
+						<div class='grey-text text-lighten-4 right' id="social">
+							<a id="fb" target="_blank" href="http://www.facebook.com/OfficeNomads">fb</a>
+							<a id="tw" target="_blank" href="http://twitter.com/OfficeNomads">tw</a>
+							<a id="ye" target="_blank" href="http://www.yelp.com/biz/office-nomads-seattle">ye</a>
+						</div>
+					</div>
+        </div>
+      </footer>
+			<!-- End Page -->
+		</div>
+		<script>
+		$(document).ready(function(){
+
+			$(function () {
+				// scroll body to 0px on click
+				$('#scroll-top a').click(function () {
+					$('body,html').animate({
+						scrollTop: 0
+					}, 800);
+					return false;
+				});
+			});
+
+			$(document).on('scroll', function() {
+				var scrollY = $(window).scrollTop();
+				var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+          shrinkOn = 150;
+				if (scrollY > shrinkOn) {
+					$('#home').addClass('smaller');
+				} else {
+					if($('#home').hasClass('smaller')) {
+						$('#home').removeClass('smaller');
+					}
+				}
+			});
+		});
+		</script>
+		{% endblock %}
+
+		{% block extrajs %}
+		{% endblock %}
+		</body>
+		</html>
