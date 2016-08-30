@@ -79,7 +79,7 @@ p {
 }
 
 .logo-img {
-	content: url(../img/on-logo.png);
+	content: url(../img/logo.png);
 	position: fixed;
 	top: 0;
 	left: 0;
