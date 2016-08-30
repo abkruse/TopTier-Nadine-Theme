@@ -100,7 +100,7 @@ p {
 }
 
 .sec-logo {
-	content: url(../img/logo-line.png);
+	content: url(../img/logo.png);
 	position: fixed;
 	top: 0;
 	left: 0;
