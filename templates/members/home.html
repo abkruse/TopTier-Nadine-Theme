@@ -1,4 +1,5 @@
 {% load settings_value %}
+{% load static  %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,20 +12,19 @@
 	<!--[if IE]>
 		<script src="{{ STATIC_URL }}html5.js"></script>
 	<![endif]-->
-	<script src="{{ STATIC_URL }}jquery-2.1.0.min.js"></script>
-	<script src="{{ STATIC_URL }}jquery-ui-1.10.4.custom.min.js"></script>
+	<script src="{% static 'jquery-2.1.0.min.js' %}"></script>
+	<script src="{% static 'jquery-ui-1.10.4.custom.min.js' %}"></script>
 	<!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="{{ STATIC_URL }}css/materialize.min.css" />
+  <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}" />
 
   <!-- Compiled and minified JavaScript -->
-  <script src="{{ STATIC_URL }}js/materialize.min.js"></script>
+  <script src="{% static 'js/materialize.min.js' %}"></script>
 
 	<link hef="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/members.css" />
-	<link rel="stylesheet" href="{{ STATIC_URL }}jquery-custom.css">
+	<link rel="stylesheet" type="text/css" href= "{% static 'members.css'%}" />
+	<link rel="stylesheet" href="{% static 'jquery-custom.css' %}">
 
 	{% if not request.user.is_staff %}
 		<script>
