@@ -141,26 +141,34 @@ p {
 	text-align: center;
 }
 
-#profile_form {
-	background-color: RGBA(232, 232, 232, 1);
+#profile_form, #registration_form {
+	background-color: RGBA(239, 238, 231, 1);
 	padding: 2%;
 	margin-left: 15%;
 	width: 70%;
 }
 
-#profile_form tr {
+#registration_form {
+	margin-top: 5%;
+}
+
+#profile_form tr, #registration_form tr {
 	border: none;
 }
 
-#profile_form input {
+#profile_form input, #registration_form input {
 	padding: 2%;
 	background-color: white;
 	border-bottom: none;
 }
 
-#sub-btn {
+.sub-btn {
 	margin-top: 2%;
 	margin-left: 35%;
+}
+
+#reg-btn {
+	margin-left: 0;
 }
 
 .card {
