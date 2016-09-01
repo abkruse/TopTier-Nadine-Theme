@@ -141,6 +141,28 @@ p {
 	text-align: center;
 }
 
+#profile_form {
+	background-color: RGBA(232, 232, 232, 1);
+	padding: 2%;
+	margin-left: 15%;
+	width: 70%;
+}
+
+#profile_form tr {
+	border: none;
+}
+
+#profile_form input {
+	padding: 2%;
+	background-color: white;
+	border-bottom: none;
+}
+
+#sub-btn {
+	margin-top: 2%;
+	margin-left: 35%;
+}
+
 .card {
 	text-align: center;
 	background-color: RGBA(94, 138, 196, 1);
@@ -329,6 +351,18 @@ footer.page-footer{
 	 iframe {
 		 width: 200px;
 	 }
+}
+
+@media only screen and (max-width: 1100px) {
+
+	#profile_form {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	#profile_form input {
+		margin-right: 1%;
+	}
 }
 
 /*Dynamic top margin when using large screen*/
