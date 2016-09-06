@@ -162,6 +162,10 @@ p {
 	border-bottom: none;
 }
 
+#event_cal {
+	margin-left: 10%;
+}
+
 .sub-btn {
 	margin-top: 2%;
 	margin-left: 35%;
@@ -174,7 +178,6 @@ p {
 .card {
 	text-align: center;
 	background-color: RGBA(94, 138, 196, 1);
-	/*z-index: -1;*/
 }
 
 .event-card {
@@ -356,7 +359,7 @@ footer.page-footer{
 		 width: 250px;
 	 }
 
-	 iframe {
+	 #home_cal {
 		 width: 200px;
 	 }
 }
