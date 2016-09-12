@@ -7,9 +7,8 @@
 <nav class='row' id='home-nav'>
   <div class="nav-wrapper">
 		<div id='logo'>
-			<a href="#"><img class='logo-img' /></a>
+      <a href="#"><img class='logo-img' /></a>
 		</div>
-    <ul id="nav-mobile" class="right">
 {% endblock %}
 
 {% block lower_nav %}
@@ -19,21 +18,22 @@
 {% endblock %}
 
 {% block extrajs %}
-	<script>
-		$(document).ready(function(){
+<script>
+  $(document).ready(function(){
 
-			$(document).on('scroll', function() {
-				var scrollY = $(window).scrollTop();
-				var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-	        shrinkOn = 150;
-				if (scrollY > shrinkOn) {
-					$('.logo-img').addClass('smaller');
-				} else {
-					if($('.logo-img').hasClass('smaller')) {
-						$('.logo-img').removeClass('smaller');
-					}
-				}
-			});
-		});
-	</script>
+    $(document).on('scroll', function() {
+      var scrollY = $(window).scrollTop();
+      var distanceY = window.pageYOffset ||document.documentElement.scrollTop;
+      var shrinkOn = 150;
+
+      if (shrinkOn < scrollY) {
+        $('.logo-img').addClass('smaller');
+      } else {
+        if($('.logo-img').hasClass('smaller')) {
+          $('.logo-img').removeClass('smaller');
+        }
+      }
+    });
+  });
+</script>
 {% endblock %}
