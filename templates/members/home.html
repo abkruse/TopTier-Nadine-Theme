@@ -2,7 +2,6 @@
 {% load settings_value %}
 {% load static  %}
 
-
 {% block top_nav %}
 <nav class='row' id='home-nav'>
   <div class="nav-wrapper">
@@ -15,6 +14,10 @@
 <div id='jumbotron'>
 	<img id='jumbo-img' />
 </div>
+{% endblock %}
+
+{% block footer-class %}
+	<footer class="home-footer">
 {% endblock %}
 
 {% block extrajs %}
