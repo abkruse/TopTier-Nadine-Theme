@@ -85,6 +85,7 @@ p {
 #jumbotron {
 	margin-top: 4%;
 	width: 100%;
+	background-color: white;
 }
 
 .logo-img {
@@ -226,6 +227,17 @@ p {
 
 #event_cal {
 	margin-left: 10%;
+}
+
+#site-search-form input {
+	width: 60%;
+}
+
+#site-search-form input.search-btn {
+	background: RGBA(63, 146, 161, 1);
+	width: 30%;
+	padding: 0;
+	margin-left: 5%;
 }
 
 .card {
