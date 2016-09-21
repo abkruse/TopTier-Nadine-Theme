@@ -352,6 +352,127 @@ table th:first-child { text-align: left; width: 15%;}
 table td:first-child, table td:last-child { text-align: left; }
 table td { text-align: center; border-bottom: 1px solid #ccc; padding: 0.5em; }
 
+/*booking_create styling*/
+	#booking-date {
+		text-align: center;
+	}
+
+	#time-row {
+		text-align: center;
+	}
+
+	#av-box, #phone-box {
+		padding-top: 2%;
+	}
+
+	#room-search {
+		padding-top: 1%;
+	}
+
+	#room-criteria {
+		padding-bottom: 3%;
+		border-bottom: 1px solid grey;
+	}
+
+	.book-room {
+		margin-top: 5%;
+	}
+
+	.book-btn, .room-show {
+		background-color: RGBA(82, 144, 159, 1);
+	}
+
+	.cal-table {
+		margin-top: 10px;
+	}
+
+	.cal-table thead {
+		border: none;
+	}
+	.cal-table th{
+		font-size: .8em;
+		text-align: left;
+		height: 10px;
+		width: 2%;
+	}
+
+	th.rotate{
+	  height: 40px;
+	  width: 2%;
+	  min-width: 2%;
+	  max-width: 2%;
+	  position: relative;
+	  vertical-align: bottom;
+	  padding: 0;
+	  font-size: 12px;
+	  line-height: 0.8;
+	}
+
+	th.rotate > div {
+		position: relative;
+		top: 0px;
+		left: 20px;
+		height: 100%;
+		-ms-transform:skew(-45deg,0deg);
+		-moz-transform:skew(-45deg,0deg);
+		-webkit-transform:skew(-45deg,0deg);
+		-o-transform:skew(-45deg,0deg);
+		transform:skew(-45deg,0deg);
+	}
+
+	th.rotate span {
+		-ms-transform:skew(45deg,0deg) rotate(315deg);
+		-moz-transform:skew(45deg,0deg) rotate(315deg);
+		-webkit-transform:skew(45deg,0deg) rotate(315deg);
+		-o-transform:skew(45deg,0deg) rotate(315deg);
+		transform:skew(45deg,0deg) rotate(315deg);
+		position: absolute;
+		bottom: 30px;
+		left: -44px;
+		display: inline-block;
+		width: 100%;
+		width: 85px;
+		text-align: left;
+		white-space: nowrap;
+	}
+
+	.cal-table th:first-child {
+		width: 2%;
+	}
+
+	.cal-box {
+		border-bottom: none;
+		border-top: none;
+		width: 2%;
+		height: 65px;
+		background-color: RGBA(178, 205, 203, .6);
+		border-right: 1px solid white;
+		box-sizing: border-box;
+		padding: 0;
+		border-radius: 0px 0px 0px 0px;
+	}
+
+	.cal-table td:first-child {
+		border-radius: 4px 0px 0px 4px;
+	}
+
+	.cal-table td:last-child {
+		border-radius: 0px 4px 4px 0px;
+	}
+
+	.slider {
+		overflow-y: hidden;
+		max-height: 500px; /* approximate max height */
+		transition-property: all;
+		transition-duration: .7s;
+		transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	}
+
+	.slider.closed {
+		max-height: 0;
+	}
+
+
 /* Footer */
 
 footer.home-footer {
